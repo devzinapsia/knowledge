@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="knowledge_transfer_menu"
+              name="Transfer"
+              parent="knowledge.knowledge_menu_root"
+              groups="base.group_system"
+              sequence="50"/>
+    <menuitem id="knowledge_transfer_export_menu"
+              name="Export"
+              parent="knowledge_transfer_menu"
+              action="knowledge_transfer_export_wizard_action"
+              groups="base.group_system"
+              sequence="1"/>
+    <menuitem id="knowledge_transfer_import_menu"
+              name="Import"
+              parent="knowledge_transfer_menu"
+              action="knowledge_transfer_import_wizard_action"
+              groups="base.group_system"
+              sequence="2"/>
+</odoo>

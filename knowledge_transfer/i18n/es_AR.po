@@ -1,0 +1,447 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* knowledge_transfer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-06 16:38+0000\n"
+"PO-Revision-Date: 2026-10-06 16:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Article index entry not part of the export removed: \"%s\""
+msgstr "Entrada del índice de artículos que no forma parte de la exportación eliminada: \"%s\""
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
+msgid "Articles"
+msgstr "Artículos"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__article_count
+msgid "Articles created"
+msgstr "Artículos creados"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__attachment_count
+msgid "Attachments created"
+msgstr "Adjuntos creados"
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__container_id
+msgid "Container article"
+msgstr "Artículo contenedor"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+msgid "Cover"
+msgstr "Portada"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__create_uid
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__create_date
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__display_name
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__display_name
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_mixin__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields.selection,name:knowledge_transfer.selection__knowledge_transfer_import_wizard__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields.selection,name:knowledge_transfer.selection__knowledge_transfer_import_wizard__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
+msgid ""
+"Each selected article is exported with all its sub-articles, images and files.\n"
+"                    Members, permissions, favorites, comments and version history are not exported."
+msgstr ""
+"Cada artículo seleccionado se exporta con todos sus sub-artículos, imágenes y archivos.\n"
+"                    No se exportan miembros, permisos, favoritos, comentarios ni historial de versiones."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Embedded component not transferred: \"%s\""
+msgstr "Componente embebido no transferido: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+#: model:ir.actions.act_window,name:knowledge_transfer.knowledge_transfer_export_wizard_action
+#: model:ir.actions.server,name:knowledge_transfer.knowledge_transfer_export_server_action
+#: model:ir.ui.menu,name:knowledge_transfer.knowledge_transfer_export_menu
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
+msgid "Export"
+msgstr "Exportar"
+
+#. module: knowledge_transfer
+#: model:ir.model,name:knowledge_transfer.model_knowledge_transfer_export_wizard
+msgid "Export Knowledge articles"
+msgstr "Exportar artículos de Knowledge"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "File not available, removed: \"%s\""
+msgstr "Archivo no disponible, eliminado: \"%s\""
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__id
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__id
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_mixin__id
+msgid "ID"
+msgstr "ID"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Image not available, removed: \"%s\""
+msgstr "Imagen no disponible, eliminada: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+#: model:ir.actions.act_window,name:knowledge_transfer.knowledge_transfer_import_wizard_action
+#: model:ir.ui.menu,name:knowledge_transfer.knowledge_transfer_import_menu
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid "Import"
+msgstr "Importar"
+
+#. module: knowledge_transfer
+#: model:ir.model,name:knowledge_transfer.model_knowledge_transfer_import_wizard
+msgid "Import Knowledge articles"
+msgstr "Importar artículos de Knowledge"
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid "Import completed."
+msgstr "Importación completada."
+
+#. module: knowledge_transfer
+#: model:ir.model,name:knowledge_transfer.model_knowledge_transfer_mixin
+msgid "Knowledge transfer shared helpers"
+msgstr "Utilidades compartidas de transferencia de Knowledge"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__write_uid
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__write_date
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Link to a missing attachment removed: \"%s\""
+msgstr "Enlace a un adjunto faltante eliminado: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Link to a record of the source database removed: \"%s\""
+msgstr "Enlace a un registro de la base de origen eliminado: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Link to an article that is not part of the export removed: \"%s\""
+msgstr "Enlace a un artículo que no forma parte de la exportación eliminado: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Media source not available, removed: \"%s\""
+msgstr "Origen multimedia no disponible, eliminado: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+msgid ""
+"None of the selected articles can be exported (they may be archived or in "
+"the trash)."
+msgstr "Ninguno de los artículos seleccionados se puede exportar (pueden estar archivados o en la papelera)."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Only Knowledge administrators can transfer articles."
+msgstr "Solo los administradores de Knowledge pueden transferir artículos."
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid "Open container"
+msgstr "Abrir contenedor"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Relational property value cleared: \"%s\""
+msgstr "Valor de propiedad relacional vaciado: \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "Saved filters removed from the embedded view \"%s\""
+msgstr "Filtros guardados eliminados de la vista embebida \"%s\""
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+msgid "Select at least one article to export."
+msgstr "Seleccione al menos un artículo para exportar."
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,help:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
+msgid "Selected articles are exported together with all their sub-articles."
+msgstr "Los artículos seleccionados se exportan junto con todos sus sub-artículos."
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__state
+msgid "State"
+msgstr "Estado"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The %(file)s file of the ZIP is not valid: %(reason)s"
+msgstr "El archivo %(file)s del ZIP no es válido: %(reason)s"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The %s file of the ZIP is not valid JSON."
+msgstr "El archivo %s del ZIP no es un JSON válido."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The %s file of the ZIP is not valid."
+msgstr "El archivo %s del ZIP no es válido."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The ZIP file contains a dangerous path: %s"
+msgstr "El archivo ZIP contiene una ruta peligrosa: %s"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The ZIP file contains too many files (maximum %s)."
+msgstr "El archivo ZIP contiene demasiados archivos (máximo %s)."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The ZIP file has no %s: it was not created by the Knowledge export."
+msgstr "El archivo ZIP no tiene %s: no fue generado por la exportación de Knowledge."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The ZIP file is too large once uncompressed (maximum %s MB)."
+msgstr "El archivo ZIP es demasiado grande una vez descomprimido (máximo %s MB)."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid ""
+"The ZIP was exported from Odoo %s, which differs from this database's "
+"version."
+msgstr "El ZIP fue exportado desde Odoo %s, que difiere de la versión de esta base."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The body of article %s is not valid UTF-8."
+msgstr "El cuerpo del artículo %s no es UTF-8 válido."
+
+#. module: knowledge_transfer
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid ""
+"The content of the ZIP is created in your private section, under the\n"
+"                        \"Artículos importados Zinapsia\" article. Existing articles are never modified."
+msgstr ""
+"El contenido del ZIP se crea en su sección privada, dentro del artículo\n"
+"                        \"Artículos importados Zinapsia\". Los artículos existentes nunca se modifican."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "The uploaded file is not a valid ZIP file."
+msgstr "El archivo subido no es un archivo ZIP válido."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "This import has already been done."
+msgstr "Esta importación ya fue realizada."
+
+#. module: knowledge_transfer
+#: model:ir.ui.menu,name:knowledge_transfer.knowledge_transfer_menu
+msgid "Transfer"
+msgstr "Transferencia"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid ""
+"Unsupported ZIP format version: %(version)s (supported: %(supported)s)."
+msgstr "Versión de formato de ZIP no soportada: %(version)s (soportadas: %(supported)s)."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "Upload the ZIP file to import."
+msgstr "Suba el archivo ZIP a importar."
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__report
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
+msgid "Warnings"
+msgstr "Advertencias"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__zip_file
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__zip_file
+msgid "ZIP file"
+msgstr "Archivo ZIP"
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_export_wizard__zip_filename
+#: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__zip_filename
+msgid "ZIP file name"
+msgstr "Nombre del archivo ZIP"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "[Embedded content not transferred: %s]"
+msgstr "[Contenido embebido no transferido: %s]"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "[File not transferred: %s]"
+msgstr "[Archivo no transferido: %s]"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
+msgid "[Image not transferred: %s]"
+msgstr "[Imagen no transferida: %s]"
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "an article entry has no valid key."
+msgstr "una entrada de artículo no tiene una clave válida."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "an attachment entry is malformed."
+msgstr "una entrada de adjunto está mal formada."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "it contains no article."
+msgstr "no contiene ningún artículo."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the URL of attachment %s is missing."
+msgstr "falta la URL del adjunto %s."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the article key %s is duplicated."
+msgstr "la clave de artículo %s está duplicada."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the attachment list is malformed."
+msgstr "la lista de adjuntos está mal formada."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the body of article %s is missing."
+msgstr "falta el cuerpo del artículo %s."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the cover of article %s is missing."
+msgstr "falta la portada del artículo %s."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the file of attachment %s is missing."
+msgstr "falta el archivo del adjunto %s."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the item data of article %s is malformed."
+msgstr "los datos de ítems del artículo %s están mal formados."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the name or icon of article %s is malformed."
+msgstr "el nombre o el ícono del artículo %s están mal formados."
+
+#. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_import_wizard.py:0
+msgid "the parent of article %s must be listed before it."
+msgstr "el padre del artículo %s debe figurar antes que él."

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="knowledge_transfer_import_wizard_view_form" model="ir.ui.view">
+        <field name="name">knowledge.transfer.import.wizard.view.form</field>
+        <field name="model">knowledge.transfer.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import">
+                <field name="state" invisible="1"/>
+                <div invisible="state != 'draft'">
+                    <p class="text-muted">
+                        The content of the ZIP is created in your private section, under the
+                        "Artículos importados Zinapsia" article. Existing articles are never modified.
+                    </p>
+                    <group>
+                        <field name="zip_file" filename="zip_filename" required="state == 'draft'"/>
+                        <field name="zip_filename" invisible="1"/>
+                    </group>
+                </div>
+                <div invisible="state != 'done'">
+                    <div class="alert alert-success" role="status">
+                        Import completed.
+                    </div>
+                    <group>
+                        <field name="container_id"/>
+                        <field name="article_count"/>
+                        <field name="attachment_count"/>
+                    </group>
+                    <separator string="Warnings" invisible="not report"/>
+                    <field name="report" nolabel="1" invisible="not report"/>
+                </div>
+                <footer>
+                    <button string="Import" name="action_import" type="object" class="btn-primary"
+                            invisible="state != 'draft'" data-hotkey="q"/>
+                    <button string="Open container" name="action_open_container" type="object"
+                            class="btn-primary" invisible="state != 'done'" data-hotkey="q"/>
+                    <button string="Close" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="knowledge_transfer_import_wizard_action" model="ir.actions.act_window">
+        <field name="name">Import</field>
+        <field name="res_model">knowledge.transfer.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+</odoo>

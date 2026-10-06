@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="knowledge_transfer_export_wizard_view_form" model="ir.ui.view">
+        <field name="name">knowledge.transfer.export.wizard.view.form</field>
+        <field name="model">knowledge.transfer.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Export">
+                <p class="text-muted">
+                    Each selected article is exported with all its sub-articles, images and files.
+                    Members, permissions, favorites, comments and version history are not exported.
+                </p>
+                <group>
+                    <field name="article_ids" widget="many2many_tags"
+                           options="{'no_create': True}"/>
+                </group>
+                <footer>
+                    <button string="Export" name="action_export" type="object" class="btn-primary"
+                            data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="knowledge_transfer_export_wizard_action" model="ir.actions.act_window">
+        <field name="name">Export</field>
+        <field name="res_model">knowledge.transfer.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+    </record>
+
+    <!-- "Export" in the Action menu of the Knowledge article list view -->
+    <record id="knowledge_transfer_export_server_action" model="ir.actions.server">
+        <field name="name">Export</field>
+        <field name="model_id" ref="knowledge.model_knowledge_article"/>
+        <field name="binding_model_id" ref="knowledge.model_knowledge_article"/>
+        <field name="binding_view_types">list</field>
+        <field name="group_ids" eval="[(4, ref('base.group_system'))]"/>
+        <field name="state">code</field>
+        <field name="code">action = env['knowledge.transfer.export.wizard'].action_open_with_articles(records.ids)</field>
+    </record>
+</odoo>

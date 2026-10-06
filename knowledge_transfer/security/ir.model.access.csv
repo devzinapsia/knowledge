@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_knowledge_transfer_export_wizard_system,knowledge.transfer.export.wizard.system,model_knowledge_transfer_export_wizard,base.group_system,1,1,1,1
+access_knowledge_transfer_import_wizard_system,knowledge.transfer.import.wizard.system,model_knowledge_transfer_import_wizard,base.group_system,1,1,1,1
