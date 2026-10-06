@@ -1,0 +1,111 @@
+GNU LESSER GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
+
+Copyright (C) 2024 [Your Company / Your Name]
+
+================================================================================
+MAINTENANCE MODULES FOR ODOO
+================================================================================
+
+This project is licensed under the GNU Lesser General Public License v3.0
+(LGPL-3), the same license used by Odoo Community Edition.
+
+--------------------------------------------------------------------------------
+PERMISSIONS SUMMARY
+--------------------------------------------------------------------------------
+
+PERMISSIONS:
+  ✓ Commercial use       - You can use these modules commercially
+  ✓ Modification         - You can modify the code
+  ✓ Distribution         - You can distribute the original or modified code
+  ✓ Private use          - You can use the modules privately
+  ✓ Patent use           - Grants patent rights
+
+CONDITIONS:
+  ⚠ Disclose source      - You must share the source code of your modifications
+  ⚠ Same license         - Modifications must use LGPL-3
+  ⚠ License notice       - You must include a copy of this license
+  ⚠ State changes        - You must document the changes made
+
+LIMITATIONS:
+  ✗ No warranty          - The software is provided "as is"
+  ✗ No liability         - Authors are not liable for damages
+
+--------------------------------------------------------------------------------
+WHAT THIS MEANS FOR ODOO MODULES
+--------------------------------------------------------------------------------
+
+LGPL-3 is ideal for Odoo modules because:
+
+1. ✅ You can use these modules in COMMERCIAL Odoo installations
+2. ✅ You DON'T need to make your entire Odoo installation open source
+3. ✅ You only need to share modifications to THESE specific modules
+4. ✅ You can create proprietary modules that depend on these modules
+5. ✅ Compatible with both Odoo Community Edition and Odoo Enterprise
+
+IF YOU MODIFY THESE MODULES:
+- You must keep this LICENSE file
+- You must document your changes
+- You must share the source code under LGPL-3 if you distribute
+
+IF YOU ONLY USE THESE MODULES (without modification):
+- You DON'T need to share your code
+- You can use them freely in production
+- You can have other proprietary modules
+
+--------------------------------------------------------------------------------
+FULL LICENSE TEXT
+--------------------------------------------------------------------------------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+The complete legal text of LGPL-3 is available at:
+https://www.gnu.org/licenses/lgpl-3.0.html
+https://www.gnu.org/licenses/lgpl-3.0.txt
+
+--------------------------------------------------------------------------------
+CONTRIBUTIONS
+--------------------------------------------------------------------------------
+
+By contributing to this project, you agree that your contributions will be
+licensed under the same LGPL-3 license.
+
+--------------------------------------------------------------------------------
+CONTACT INFORMATION
+--------------------------------------------------------------------------------
+
+Project: Account-financial-tools Modules for Odoo
+Author: Pablo Campo / Zinapsia SRL
+Email: dev@zinapsia.com
+Website: https://www.zinapsia.com
+Repository: https://github.com/devzinapsia/account-financial-tools
+
+For questions about the license or use of these modules, please contact
+the development team.
+
+--------------------------------------------------------------------------------
+INCLUDED MODULES
+--------------------------------------------------------------------------------
+
+This project includes the following modules under LGPL-3:
+
+- maintenance_website_request v1.0.0
+  Allows creating maintenance requests from the public website
+
+All modules in this project are licensed under LGPL-3 unless otherwise
+stated in the specific module.
+
+================================================================================
+END OF LICENSE FILE
+================================================================================
