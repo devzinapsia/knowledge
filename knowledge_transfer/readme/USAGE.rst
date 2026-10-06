@@ -3,7 +3,9 @@ Export
 
 #. Go to *Knowledge > Transfer > Export*, or select articles in the
    *Knowledge > Articles* list and use *Action > Export*.
-#. Choose the articles to export (their sub-articles are included).
+#. Choose the root articles to export; their sub-articles are included
+   automatically. Only root articles of your own Knowledge are offered. From
+   the list view action, selected sub-articles are ignored.
 #. Click *Export*: a ``knowledge_export_<YYYYMMDD_HHMM>.zip`` file is
    downloaded.
 

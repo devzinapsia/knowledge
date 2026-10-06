@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:38+0000\n"
-"PO-Revision-Date: 2026-10-06 16:38+0000\n"
+"POT-Creation-Date: 2026-10-06 18:03+0000\n"
+"PO-Revision-Date: 2026-10-06 18:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_AR\n"
@@ -86,15 +86,6 @@ msgstr "Hecho"
 #: model:ir.model.fields.selection,name:knowledge_transfer.selection__knowledge_transfer_import_wizard__state__draft
 msgid "Draft"
 msgstr "Borrador"
-
-#. module: knowledge_transfer
-#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
-msgid ""
-"Each selected article is exported with all its sub-articles, images and files.\n"
-"                    Members, permissions, favorites, comments and version history are not exported."
-msgstr ""
-"Cada artículo seleccionado se exporta con todos sus sub-artículos, imágenes y archivos.\n"
-"                    No se exportan miembros, permisos, favoritos, comentarios ni historial de versiones."
 
 #. module: knowledge_transfer
 #. odoo-python
@@ -211,6 +202,14 @@ msgid "Only Knowledge administrators can transfer articles."
 msgstr "Solo los administradores de Knowledge pueden transferir artículos."
 
 #. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+msgid ""
+"Only root articles you can see in your Knowledge sidebar can be exported "
+"(their sub-articles are included automatically): %s"
+msgstr "Solo se pueden exportar artículos raíz que vea en su barra lateral de Knowledge (sus sub-artículos se incluyen automáticamente): %s"
+
+#. module: knowledge_transfer
 #: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
 msgid "Open container"
 msgstr "Abrir contenedor"
@@ -220,6 +219,11 @@ msgstr "Abrir contenedor"
 #: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
 msgid "Relational property value cleared: \"%s\""
 msgstr "Valor de propiedad relacional vaciado: \"%s\""
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,help:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
+msgid "Root articles to export, together with all their sub-articles."
+msgstr "Artículos raíz a exportar, junto con todos sus sub-artículos."
 
 #. module: knowledge_transfer
 #. odoo-python
@@ -234,9 +238,13 @@ msgid "Select at least one article to export."
 msgstr "Seleccione al menos un artículo para exportar."
 
 #. module: knowledge_transfer
-#: model:ir.model.fields,help:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
-msgid "Selected articles are exported together with all their sub-articles."
-msgstr "Los artículos seleccionados se exportan junto con todos sus sub-artículos."
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
+msgid ""
+"Select root articles: each one is exported with all its sub-articles, images and files.\n"
+"                    Members, permissions, favorites, comments and version history are not exported."
+msgstr ""
+"Seleccione artículos raíz: cada uno se exporta con todos sus sub-artículos, imágenes y archivos.\n"
+"                    No se exportan miembros, permisos, favoritos, comentarios ni historial de versiones."
 
 #. module: knowledge_transfer
 #: model:ir.model.fields,field_description:knowledge_transfer.field_knowledge_transfer_import_wizard__state

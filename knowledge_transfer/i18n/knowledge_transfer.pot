@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-06 16:38+0000\n"
-"PO-Revision-Date: 2026-10-06 16:38+0000\n"
+"POT-Creation-Date: 2026-10-06 18:03+0000\n"
+"PO-Revision-Date: 2026-10-06 18:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,13 +84,6 @@ msgstr ""
 #. module: knowledge_transfer
 #: model:ir.model.fields.selection,name:knowledge_transfer.selection__knowledge_transfer_import_wizard__state__draft
 msgid "Draft"
-msgstr ""
-
-#. module: knowledge_transfer
-#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
-msgid ""
-"Each selected article is exported with all its sub-articles, images and files.\n"
-"                    Members, permissions, favorites, comments and version history are not exported."
 msgstr ""
 
 #. module: knowledge_transfer
@@ -208,6 +201,14 @@ msgid "Only Knowledge administrators can transfer articles."
 msgstr ""
 
 #. module: knowledge_transfer
+#. odoo-python
+#: code:addons/knowledge_transfer/wizard/knowledge_transfer_export_wizard.py:0
+msgid ""
+"Only root articles you can see in your Knowledge sidebar can be exported "
+"(their sub-articles are included automatically): %s"
+msgstr ""
+
+#. module: knowledge_transfer
 #: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_import_wizard_view_form
 msgid "Open container"
 msgstr ""
@@ -216,6 +217,11 @@ msgstr ""
 #. odoo-python
 #: code:addons/knowledge_transfer/models/knowledge_transfer_mixin.py:0
 msgid "Relational property value cleared: \"%s\""
+msgstr ""
+
+#. module: knowledge_transfer
+#: model:ir.model.fields,help:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
+msgid "Root articles to export, together with all their sub-articles."
 msgstr ""
 
 #. module: knowledge_transfer
@@ -231,8 +237,10 @@ msgid "Select at least one article to export."
 msgstr ""
 
 #. module: knowledge_transfer
-#: model:ir.model.fields,help:knowledge_transfer.field_knowledge_transfer_export_wizard__article_ids
-msgid "Selected articles are exported together with all their sub-articles."
+#: model_terms:ir.ui.view,arch_db:knowledge_transfer.knowledge_transfer_export_wizard_view_form
+msgid ""
+"Select root articles: each one is exported with all its sub-articles, images and files.\n"
+"                    Members, permissions, favorites, comments and version history are not exported."
 msgstr ""
 
 #. module: knowledge_transfer

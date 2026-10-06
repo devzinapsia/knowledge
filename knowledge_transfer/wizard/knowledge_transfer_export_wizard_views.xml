@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <form string="Export">
                 <p class="text-muted">
-                    Each selected article is exported with all its sub-articles, images and files.
+                    Select root articles: each one is exported with all its sub-articles, images and files.
                     Members, permissions, favorites, comments and version history are not exported.
                 </p>
                 <group>

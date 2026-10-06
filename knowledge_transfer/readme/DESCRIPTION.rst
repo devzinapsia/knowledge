@@ -4,10 +4,13 @@ prepared in a staging or template database into the customer's database.
 
 **Requires Odoo Enterprise** (it depends on the ``knowledge`` module).
 
-* **Export**: each selected article is exported with all its sub-articles,
-  embedded images, files and cover. Selecting an article and one of its
-  descendants does not duplicate anything. Archived and trashed articles are
-  skipped. Articles are read with the exporting user's own rights.
+* **Export**: you select **root articles** only (the ones shown at the top
+  level of your Knowledge sidebar); each one is exported with all its
+  sub-articles, embedded images, files and cover. Archived and trashed
+  articles are skipped. Only your own Knowledge is offered: articles you can
+  see and access through Knowledge permissions (workspace articles visible to
+  you, your private and shared articles), never other users' private
+  articles, even for administrators.
 * **Import**: never overwrites, moves or deletes anything. The content is
   created in the importing user's **private** section, under a root article
   named ``Artículos importados Zinapsia`` (created the first time, reused

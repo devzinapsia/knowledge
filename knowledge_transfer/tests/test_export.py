@@ -1,5 +1,6 @@
 import re
 
+from odoo.exceptions import UserError
 from odoo.tests import tagged
 
 from .common import KnowledgeTransferCase
@@ -27,10 +28,46 @@ class TestKnowledgeTransferExport(KnowledgeTransferCase):
             self.assertIn(entry["body"], files)
             self.assertEqual(entry["body"], f"articles/{entry['key']}/body.html")
 
-    def test_export_parent_and_descendant_not_duplicated(self):
-        manifest, _files = self.read_zip(self.export_zip(self.root | self.grandchild))
+    def test_only_root_articles_can_be_selected(self):
+        Wizard = self.env["knowledge.transfer.export.wizard"]
+        domain = Wizard._fields["article_ids"].domain
+        selectable = self.Article.search(domain)
+        self.assertIn(self.root, selectable)
+        self.assertNotIn(self.child_b, selectable)
+        self.assertNotIn(self.grandchild, selectable)
+        # Server-side: a sub-article cannot be forced into the selection.
+        wizard = Wizard.create({"article_ids": [(6, 0, (self.root | self.grandchild).ids)]})
+        with self.assertRaises(UserError):
+            wizard.action_export()
+        # The list view action keeps only the root articles of the selection.
+        action = Wizard.action_open_with_articles((self.root | self.grandchild).ids)
+        self.assertEqual(action["context"]["default_article_ids"], [(6, 0, self.root.ids)])
+
+    def test_other_users_private_articles_not_exportable(self):
+        """Administrators read every article through ACLs: the export must
+        still be limited to their own Knowledge, like the sidebar."""
+        foreign = self.Article.with_user(self.other_admin).article_create(
+            "Other admin private", is_private=True)
+        self.assertTrue(foreign.with_user(self.admin).has_access("read"))  # the ACL bypass
+        Wizard = self.env["knowledge.transfer.export.wizard"]
+        self.assertNotIn(foreign, self.Article.search(Wizard._fields["article_ids"].domain))
+        wizard = Wizard.create({"article_ids": [(6, 0, foreign.ids)]})
+        with self.assertRaises(UserError):
+            wizard.action_export()
+
+    def test_restricted_descendants_not_exported(self):
+        restricted = self.Article.create({
+            "name": "Restricted child",
+            "parent_id": self.root.id,
+            "internal_permission": "none",
+            "is_desynchronized": True,
+            "article_member_ids": [(0, 0, {"partner_id": self.other_admin.partner_id.id, "permission": "write"})],
+        })
+        self.Article.create({"name": "Below restricted", "parent_id": restricted.id})
+        manifest, _files = self.read_zip(self.export_zip(self.root))
         names = [entry["name"] for entry in manifest["articles"]]
-        self.assertEqual(names.count("Grandchild"), 1)
+        self.assertNotIn("Restricted child", names)
+        self.assertNotIn("Below restricted", names)
         self.assertEqual(len(names), 4)
 
     def test_export_skips_archived_articles(self):

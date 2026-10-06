@@ -216,15 +216,21 @@ class TestKnowledgeTransferImport(KnowledgeTransferCase):
 
     def test_round_trip_same_database(self):
         wizard = self.import_zip(self.zip_data)
-        manifest_again, _files = self.read_zip(self.export_zip(self._imported_root(wizard)))
+        # Only root articles are exportable: re-export the whole container
+        # and compare what lies below it.
+        manifest_again, _files = self.read_zip(self.export_zip(wizard.container_id))
         manifest, _files = self.read_zip(self.zip_data)
 
         def shape(entries):
             names = {e["key"]: e["name"] for e in entries}
             return [(re.sub(r" - \d{4}-\d{2}-\d{2} \d{2}:\d{2}$", "", e["name"]),
-                     names.get(e["parent_key"], "").split(" - ")[0] or None) for e in entries]
+                     re.sub(r" - \d{4}-\d{2}-\d{2} \d{2}:\d{2}$", "", names[e["parent_key"]])
+                     if e["parent_key"] in names else None) for e in entries]
 
-        self.assertEqual(shape(manifest_again["articles"]), shape(manifest["articles"]))
+        below_container = [dict(e, parent_key=None) if e["parent_key"] == manifest_again["articles"][0]["key"] else e
+                           for e in manifest_again["articles"][1:]]
+        self.assertEqual(manifest_again["articles"][0]["name"], CONTAINER)
+        self.assertEqual(shape(below_container), shape(manifest["articles"]))
         self.assertEqual(len(manifest_again["attachments"]), len(manifest["attachments"]))
         self.assertEqual(json.dumps(sorted(a["checksum"] for a in manifest_again["attachments"])),
                          json.dumps(sorted(a["checksum"] for a in manifest["attachments"])))

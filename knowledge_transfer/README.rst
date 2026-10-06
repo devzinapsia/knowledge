@@ -8,10 +8,13 @@ prepared in a staging or template database into the customer's database.
 
 **Requires Odoo Enterprise** (it depends on the ``knowledge`` module).
 
-* **Export**: each selected article is exported with all its sub-articles,
-  embedded images, files and cover. Selecting an article and one of its
-  descendants does not duplicate anything. Archived and trashed articles are
-  skipped. Articles are read with the exporting user's own rights.
+* **Export**: you select **root articles** only (the ones shown at the top
+  level of your Knowledge sidebar); each one is exported with all its
+  sub-articles, embedded images, files and cover. Archived and trashed
+  articles are skipped. Only your own Knowledge is offered: articles you can
+  see and access through Knowledge permissions (workspace articles visible to
+  you, your private and shared articles), never other users' private
+  articles, even for administrators.
 * **Import**: never overwrites, moves or deletes anything. The content is
   created in the importing user's **private** section, under a root article
   named ``Artículos importados Zinapsia`` (created the first time, reused
@@ -99,9 +102,12 @@ right (``base.group_system``), which is the group Knowledge itself uses for
 its administration features. The restriction is also enforced on the
 server, not only by hiding menus.
 
-Note that Knowledge lets administrators read every article of the database,
-including other users' private articles, so an administrator can export any
-of them.
+Knowledge lets administrators read every article of the database through
+access rights, including other users' private articles. The export does not
+rely on that: it only offers and exports the articles the user can see in
+their own Knowledge sidebar and access through Knowledge permissions
+(members and internal permission), both for the selected root articles and
+for their sub-articles.
 
 The import safety limits (maximum number of files and maximum uncompressed
 size of the ZIP) are constants at the top of
@@ -115,7 +121,9 @@ Export
 
 #. Go to *Knowledge > Transfer > Export*, or select articles in the
    *Knowledge > Articles* list and use *Action > Export*.
-#. Choose the articles to export (their sub-articles are included).
+#. Choose the root articles to export; their sub-articles are included
+   automatically. Only root articles of your own Knowledge are offered. From
+   the list view action, selected sub-articles are ignored.
 #. Click *Export*: a ``knowledge_export_<YYYYMMDD_HHMM>.zip`` file is
    downloaded.
 

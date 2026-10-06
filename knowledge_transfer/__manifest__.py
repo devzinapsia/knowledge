@@ -1,6 +1,6 @@
 {
     "name": "Transferencia de artículos de Knowledge",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Productivity/Knowledge",
     "summary": "Exportar e importar árboles de artículos de Knowledge entre bases mediante un ZIP",
     "author": "Zinapsia",

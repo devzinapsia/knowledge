@@ -14,6 +14,12 @@ from ..tools.body_rewriter import (
 )
 
 RELATIONAL_PROPERTY_TYPES = {"many2one", "many2many"}
+EXPORTABLE_ROOT_DOMAIN = [
+    ("parent_id", "=", False),
+    ("is_template", "=", False),
+    ("is_article_visible", "=", True),
+    ("user_has_access", "=", True),
+]
 
 
 class ExportResolver(BodyResolver):
@@ -54,10 +60,13 @@ class KnowledgeTransferExportWizard(models.TransientModel):
     _inherit = ["knowledge.transfer.mixin"]
     _description = "Export Knowledge articles"
 
+    # Same criteria as the roots of the Knowledge sidebar: root articles the
+    # user can see and access through Knowledge permissions. Administrators
+    # read every article through ACLs, which must not widen this selection.
     article_ids = fields.Many2many(
         "knowledge.article", string="Articles",
-        domain="[('is_template', '=', False)]",
-        help="Selected articles are exported together with all their sub-articles.")
+        domain=EXPORTABLE_ROOT_DOMAIN,
+        help="Root articles to export, together with all their sub-articles.")
     zip_file = fields.Binary(string="ZIP file", readonly=True, attachment=True)
     zip_filename = fields.Char(string="ZIP file name", readonly=True)
 
@@ -75,6 +84,8 @@ class KnowledgeTransferExportWizard(models.TransientModel):
     def action_open_with_articles(self, article_ids):
         """Open the wizard with articles preselected (list view "Action" menu)."""
         self._check_transfer_access()
+        # Only root articles can be exported: other selected records are ignored.
+        article_ids = self._get_exportable_roots(article_ids).ids
         return {
             "type": "ir.actions.act_window",
             "name": self.env._("Export"),
@@ -89,6 +100,12 @@ class KnowledgeTransferExportWizard(models.TransientModel):
         self._check_transfer_access()
         if not self.article_ids:
             raise UserError(self.env._("Select at least one article to export."))
+        not_exportable = self.article_ids - self._get_exportable_roots(self.article_ids.ids)
+        if not_exportable:
+            raise UserError(self.env._(
+                "Only root articles you can see in your Knowledge sidebar can be exported "
+                "(their sub-articles are included automatically): %s",
+                ", ".join(not_exportable.mapped("display_name"))))
         content = self._build_zip()
         now = fields.Datetime.context_timestamp(self, fields.Datetime.now())
         self.write({
@@ -106,23 +123,29 @@ class KnowledgeTransferExportWizard(models.TransientModel):
     # Export logic
     # ------------------------------------------------------------------
 
+    @api.model
+    def _get_exportable_roots(self, article_ids):
+        return self.env["knowledge.article"].search(
+            [("id", "in", list(article_ids))] + EXPORTABLE_ROOT_DOMAIN)
+
     def _get_articles_to_export(self):
         """Return the exported articles, parents always before their children.
 
-        Articles are read with the user's own rights (no sudo): the search
-        only returns what the user can see. Archived/trashed articles and
-        templates are skipped, together with everything below them.
+        Articles are read with the user's own rights (no sudo), and limited
+        to the ones the user can access through Knowledge permissions
+        (``user_has_access``), not merely through the administrator ACLs.
+        Archived/trashed articles and templates are skipped, together with
+        everything below them.
         """
         Article = self.env["knowledge.article"]
-        selected = self.article_ids.filtered(lambda a: a.active and not a.to_delete and not a.is_template)
-        selected_ids = set(selected.ids)
-        roots = selected.filtered(lambda a: not (a._get_ancestor_ids() & selected_ids))
+        roots = self._get_exportable_roots(self.article_ids.ids)
         if not roots:
             return Article, Article
         candidates = Article.search([
             ("id", "child_of", roots.ids),
             ("is_template", "=", False),
             ("to_delete", "=", False),
+            ("user_has_access", "=", True),
         ])
         children_by_parent = {}
         for article in candidates:
