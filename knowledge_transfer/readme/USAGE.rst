@@ -21,6 +21,11 @@ Import
    ``Artículos importados Zinapsia``: **nobody else can see them**. Move,
    rename and reorganize them to the *Workspace* or *Shared* sections so
    other users can access them.
+#. The root of each imported tree has you as a member, so it stays in your
+   sidebar after you move it to the *Workspace*. Like any new workspace root
+   article in Knowledge, it is only shown in the sidebar of its members:
+   use *Share* to make it visible to everyone, or invite the users who need
+   it.
 
 Known limitations
 ~~~~~~~~~~~~~~~~~

@@ -165,6 +165,25 @@ class TestKnowledgeTransferImport(KnowledgeTransferCase):
         self.assertNotEqual(mine.container_id, theirs.container_id)
         self.assertEqual(theirs.container_id.article_member_ids.partner_id, self.other_admin.partner_id)
 
+    def test_moved_tree_stays_in_sidebar(self):
+        """Regression: an imported tree moved to the workspace (as the sidebar
+        drag & drop does) must not vanish from the user's sidebar once another
+        article is opened, e.g. after a second import."""
+        first = self._imported_root(self.import_zip(self.zip_data))
+        self.assertEqual(first.article_member_ids.partner_id, self.admin.partner_id)
+        self.assertEqual(first.article_member_ids.permission, "write")
+        self.assertEqual(first.category, "private")
+
+        first.move_to(parent_id=False, category="workspace")
+        first.name = "Renamed tree"
+        second = self._imported_root(self.import_zip(self.zip_data))
+
+        self.assertEqual(first.category, "workspace")
+        self.assertTrue(first.is_article_visible)
+        sidebar = second.get_sidebar_articles(unfolded_ids=[])
+        root_names = {a["name"] for a in sidebar["articles"] if not a["parent_id"]}
+        self.assertIn("Renamed tree", root_names)
+
     def test_import_never_modifies_existing_articles(self):
         container = self.Article.article_create(title=CONTAINER, is_private=True)
         self.Article.create({"name": "Existing child", "parent_id": container.id})

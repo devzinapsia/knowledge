@@ -287,7 +287,18 @@ class _PackageImporter:
                 "body": "<p><br></p>",
                 "article_properties_definition": entry.get("properties_definition") or False,
             }
-            if not is_root:
+            if is_root:
+                # Imported trees are meant to be moved out of the container.
+                # Knowledge's move_to() does not add members when a sub-article
+                # becomes a workspace root, and root articles are only visible
+                # to their members by default: without an explicit member, the
+                # moved tree would vanish from everyone's sidebar. Same member
+                # Knowledge itself gives to a newly created root article.
+                vals["article_member_ids"] = [(0, 0, {
+                    "partner_id": self.env.user.partner_id.id,
+                    "permission": "write",
+                })]
+            else:
                 sibling_counter[parent.id] = sibling_counter.get(parent.id, 0) + 1
                 vals["sequence"] = sibling_counter[parent.id]
                 if entry.get("is_article_item"):
